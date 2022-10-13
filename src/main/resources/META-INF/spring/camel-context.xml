@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+       http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://camel.apache.org/schema/spring http://camel.apache.org/schema/spring/camel-spring.xsd">
+
+    <bean id="greeter" class="org.example.Greeter"/>
+
+    <camelContext id="MyContext" xmlns="http://camel.apache.org/schema/spring">
+        <route id="timer-event-route">
+            <from uri="timer:foo?period=500"/>
+            <log message="Timer works!: ${bean:greeter?method=hello(headers.firedTime.toString())}" loggingLevel="INFO"/>
+<!--            <log message="Timer works!: ${headers.firedTime}" loggingLevel="INFO"/>-->
+        </route>
+    </camelContext>
+
+</beans>
