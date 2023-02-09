@@ -1,0 +1,29 @@
+Simple task on Camel
+
+
+All logic - camel-context.xml
+
+timer - component type
+foo - component name
+after '?' - parameters
+
+MESSAGE
+
+In camel-context you can handle with data of Message:
+components - (ex: timer)
+variables - (ex: ${body})
+
+whole things about Message: package org.apache.camel.Message
+
+
+BEANS
+
+your specific logic
+
+create your class and put into camel-context.xml as bean
+<bean id="greeter" class="org.example.Greeter"/>
+
+Desc
+
+<transform> - put something yours in body
+<to uri="dfdfdf:vfvfv?fvfvfvdf"--> - send to next component (ex: http, soap, etc)

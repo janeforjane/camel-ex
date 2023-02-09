@@ -16,6 +16,7 @@
                 <simple>${bean:greeter?method=hello(nice cat)}</simple>
             </transform>
             <log message="Now body is: '${body}'"/>
+<!--            <to uri="dfdfdf:vfvfv?fvfvfvdf"-->
         </route>
     </camelContext>
 
